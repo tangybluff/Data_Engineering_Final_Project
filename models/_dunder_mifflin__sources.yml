@@ -1,0 +1,127 @@
+version: 2
+
+sources:
+  - name: DUNDER_MIFFLIN
+    schema: DUNDER_MIFFLIN
+    database: ALUMNO2_PROJECT_BRONZE_DB
+
+    tables:
+      - name: CATEGORIES
+        description: "Table containing categories of products."
+        columns:
+          - name: CUSTOMERID
+          - name: COMPANYCODE
+          - name: COMPANYNAME
+          - name: CONTACTNAME
+          - name: CONTACTTITLE
+          - name: ADDRESS
+          - name: CITY
+          - name: STATE
+          - name: POSTALCODE
+          - name: COUNTRY
+          - name: PHONE
+
+      - name: CUSTOMERS
+        description: "Table containing customer information."
+        columns:
+          - name: CUSTOMERID
+          - name: COMPANYCODE
+          - name: COMPANYNAME
+          - name: CONTACTNAME
+          - name: CONTACTTITLE
+          - name: ADDRESS
+          - name: CITY
+          - name: STATE
+          - name: POSTALCODE
+          - name: COUNTRY
+          - name: PHONE
+
+      - name: EMPLOYEES
+        description: "Table containing employee details."
+        columns:
+          - name: EMPLOYEEID
+          - name: LASTNAME
+          - name: FIRSTNAME
+          - name: MIDDLENAME
+          - name: TITLE
+          - name: TITLEOFCOURTESY
+          - name: BIRTHDATE
+          - name: HIREDATE
+          - name: TERMINATIONDATE
+          - name: REHIREDATE
+          - name: ADDRESS
+          - name: CITY
+          - name: REGION
+          - name: POSTALCODE
+          - name: COUNTRY
+          - name: HOMEPHONE
+          - name: EXTENSION
+          - name: NOTES
+          - name: REPORTSTO
+          - name: PHOTOPATH
+          - name: EMPLOYEESTATUSID
+
+      - name: ORDERDETAILS
+        description: "Table containing details of each order."
+        columns:
+          - name: ORDERID
+          - name: PRODUCTID
+          - name: UNITPRICE
+          - name: QUANTITY
+          - name: DISCOUNT
+
+      - name: ORDERS
+        description: "Table containing order information."
+        columns:
+          - name: ORDERID
+          - name: CUSTOMERID
+          - name: EMPLOYEEID
+          - name: ORDERDATE
+          - name: REQUIREDDATE
+          - name: SHIPPEDDATE
+          - name: SHIPVIA
+          - name: FREIGHT
+          - name: SHIPNAME
+          - name: SHIPADDRESS
+          - name: SHIPCITY
+          - name: SHIPREGION
+          - name: SHIPPOSTALCODE
+          - name: SHIPCOUNTRY
+
+      - name: PRODUCTS
+        description: "Table containing product information."
+        columns:
+          - name: PRODUCTID
+          - name: PRODUCTNAME
+          - name: PRODUCTDESCRIPTION
+          - name: SUPPLIERID
+          - name: CATEGORYID
+          - name: QUANTITYPERUNIT
+          - name: UNITPRICE
+          - name: UNITSINSTOCK
+          - name: UNITSONORDER
+          - name: REORDERLEVEL
+          - name: DISCONTINUED
+
+      - name: SHIPPERS
+        description: "Table containing shipper details."
+        columns:
+          - name: SHIPPERID
+          - name: COMPANYNAME
+          - name: PHONE
+
+      - name: SUPPLIERS
+        description: "Table containing supplier information."
+        columns:
+          - name: SUPPLIERID
+          - name: COMPANYNAME
+          - name: CONTACTNAME
+          - name: CONTACTTITLE
+          - name: ADDRESS
+          - name: CITY
+          - name: REGION
+          - name: POSTALCODE
+          - name: COUNTRY
+          - name: PHONE
+          - name: FAX
+          - name: HOMEPAGE
