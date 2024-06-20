@@ -1,0 +1,179 @@
+version: 2
+
+sources:
+  - name: DUNDER_MIFFLIN
+    schema: DUNDER_MIFFLIN
+    database: ALUMNO2_PROJECT_BRONZE_DB
+
+    quoting:
+      database: false
+      schema: false
+      identifier: false
+
+    tables:
+      - name: CATEGORIES
+        description: "Table containing product categories."
+        columns:
+          - name: CATEGORYID
+            tests:
+              - unique
+              - not_null
+          - name: CATEGORYNAME
+            tests:
+              - not_null
+          - name: DESCRIPTION
+
+      - name: CUSTOMERS
+        description: "Table containing customer information."
+        columns:
+          - name: CUSTOMERID
+            tests:
+              - unique
+              - not_null
+          - name: COMPANYCODE
+            tests:
+              - unique
+          - name: COMPANYNAME
+            tests:
+              - not_null
+          - name: CONTACTNAME
+            tests:
+              - not_null
+          - name: CONTACTTITLE
+          - name: ADDRESS
+          - name: CITY
+          - name: STATE
+          - name: POSTALCODE
+          - name: COUNTRY
+          - name: PHONE
+            tests:
+              - not_null
+
+      - name: EMPLOYEES
+        description: "Table containing employee details."
+        columns:
+          - name: EMPLOYEEID
+            tests:
+              - unique
+              - not_null
+          - name: LASTNAME
+            tests:
+              - not_null
+          - name: FIRSTNAME
+            tests:
+              - not_null
+          - name: MIDDLENAME
+          - name: TITLE
+          - name: TITLEOFCOURTESY
+          - name: BIRTHDATE
+          - name: HIREDATE
+            tests:
+              - not_null
+          - name: TERMINATIONDATE
+          - name: ADDRESS
+          - name: CITY
+          - name: STATE
+          - name: POSTALCODE
+          - name: COUNTRY
+          - name: HOMEPHONE
+          - name: EXTENSION
+          - name: NOTES
+
+      - name: ORDERDETAILS
+        description: "Table containing product details of each order."
+        columns:
+          - name: ORDERID
+            tests:
+              - unique
+              - not_null
+          - name: PRODUCTID
+            tests:
+              - unique
+              - not_null
+          - name: UNITPRICE
+          - name: QUANTITY
+          - name: DISCOUNT
+
+      - name: ORDERS
+        description: "Table listing each order."
+        columns:
+          - name: ORDERID
+            tests:
+              - unique
+              - not_null
+          - name: CUSTOMERID
+            tests:
+              - unique
+              - not_null
+          - name: EMPLOYEEID
+            tests:
+              - unique
+              - not_null
+          - name: ORDERDATE
+          - name: REQUIREDDATE
+          - name: SHIPPEDDATE
+          - name: SHIPVIA
+          - name: FREIGHT
+          - name: SHIPNAME
+          - name: SHIPADDRESS
+          - name: SHIPCITY
+          - name: SHIPREGION
+          - name: SHIPPOSTALCODE
+          - name: SHIPCOUNTRY
+
+      - name: PRODUCTS
+        description: "Table containing product information."
+        columns:
+          - name: PRODUCTID
+            tests:
+              - unique
+              - not_null
+          - name: PRODUCTNAME
+          - name: PRODUCTDESCRIPTION
+          - name: SUPPLIERID
+            tests:
+              - unique
+              - not_null
+          - name: CATEGORYID
+            tests:
+              - unique
+              - not_null
+          - name: QUANTITYPERUNIT
+          - name: UNITPRICE
+            tests:
+              - not_null
+          - name: UNITSINSTOCK
+          - name: UNITSONORDER
+          - name: REORDERLEVEL
+          - name: DISCONTINUED
+
+      - name: SHIPPERS
+        description: "Table containing shipper details."
+        columns:
+          - name: SHIPPERID
+            tests:
+              - unique
+              - not_null
+          - name: COMPANYNAME
+          - name: PHONE
+            tests:
+              - not_null
+
+      - name: SUPPLIERS
+        description: "Table containing supplier information."
+        columns:
+          - name: SUPPLIERID
+            tests:
+              - unique
+              - not_null
+          - name: COMPANYNAME
+          - name: CONTACTNAME
+          - name: CONTACTTITLE
+          - name: ADDRESS
+          - name: CITY
+          - name: REGION
+          - name: POSTALCODE
+          - name: COUNTRY
+          - name: PHONE
+          - name: FAX
+          - name: HOMEPAGE
