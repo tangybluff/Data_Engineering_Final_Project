@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: fct_customer_employee_interaction
+    description: "Fact table for customer and employee interactions."
+
+  - name: fct_customer_profitability
+    description: "Fact table for customer profitability metrics."
+
+  - name: fct_daily_paper_sales
+    description: "Fact table for daily paper sales."
+
+  - name: fct_employee_sales
+    description: "Fact table for employee sales metrics."

@@ -1,0 +1,131 @@
+version: 2
+
+models:
+  - name: stg_dunder_mifflin__categories
+    description: "This table contains transformed category information."
+    columns:
+      - name: category_key
+        tests:
+          - unique
+          - not_null
+      - name: category_id
+        tests:
+          - not_null
+      - name: category_name
+
+  - name: stg_dunder_mifflin__customers
+    description: "This table contains transformed customer information."
+    columns:
+      - name: customer_key
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        tests:
+          - not_null
+      - name: company_code
+      - name: company_name
+      - name: contact_name
+      - name: contact_title
+      - name: address
+      - name: city
+      - name: state
+      - name: zip_code
+      - name: country
+      - name: phone_num
+
+  - name: stg_dunder_mifflin__employees
+    description: "This table contains transformed employee information."
+    columns:
+      - name: employee_key
+        tests:
+          - unique
+          - not_null
+      - name: employee_id
+        tests:
+          - not_null
+      - name: last_name
+      - name: first_name
+      - name: middle_name
+      - name: job_title
+      - name: date_of_birth
+      - name: hire_date
+      - name: termination_date
+      - name: address
+      - name: city
+      - name: state
+      - name: zip_code
+      - name: country
+      - name: home_phone
+      - name: extension_num
+      - name: staff_notes
+
+  - name: stg_dunder_mifflin__order_details
+    description: "This table contains transformed order detail information."
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+      - name: product_id
+        tests:
+          - not_null
+      - name: unit_price_usd
+      - name: quantity
+      - name: discount
+
+  - name: stg_dunder_mifflin__orders
+    description: "This table contains transformed order information."
+    columns:
+      - name: order_key
+        tests:
+          - unique
+          - not_null
+      - name: order_id
+        tests:
+          - not_null
+      - name: customer_id
+      - name: employee_id
+      - name: order_date_utc
+      - name: required_date_utc
+      - name: shipped_date_utc
+      - name: shipper_id
+      - name: shipping_cost
+      - name: destination_recipient
+      - name: destination_address
+      - name: destination_city
+      - name: destination_region
+      - name: destination_zip_code
+      - name: destination_country
+
+  - name: stg_dunder_mifflin__products
+    description: "This table contains transformed product information."
+    columns:
+      - name: product_key
+        tests:
+          - unique
+          - not_null
+      - name: product_id
+        tests:
+          - not_null
+      - name: product_name
+      - name: product_desc
+      - name: category_id
+      - name: quantity_per_unit
+      - name: unit_price_usd
+      - name: units_in_stock
+      - name: units_on_order
+      - name: reorder_level
+      - name: discontinued
+
+  - name: stg_dunder_mifflin__shippers
+    description: "This table contains transformed shipper information."
+    columns:
+      - name: shipper_key
+        tests:
+          - unique
+          - not_null
+      - name: shipper_id
+        tests:
+          - not_null
+      - name: shipping_company
+      - name: phone_num

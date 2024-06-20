@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: "Dimension table for customer information."
+
+  - name: dim_dunder_mifflin_employees
+    description: "Dimension table for employee information."
+
+  - name: dim_product_categories
+    description: "Dimension table for product categories."
+
+  - name: dim_product_inventory
+    description: "Dimension table for product inventory information."
+
+  - name: dim_shipping_providers
+    description: "Dimension table for shipping providers."

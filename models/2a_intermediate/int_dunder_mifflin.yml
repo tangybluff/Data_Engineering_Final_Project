@@ -1,0 +1,8 @@
+version: 2
+
+models:
+  - name: int_dunder_mifflin__order_details
+    description: "This table contains intermediate transformed order detail information."
+
+  - name: int_dunder_mifflin__orders
+    description: "This table contains intermediate transformed order information."

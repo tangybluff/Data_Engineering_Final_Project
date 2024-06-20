@@ -1,0 +1,116 @@
+version: 2
+
+models:
+  - name: base_dunder_mifflin__categories
+    description: "This table contains category information."
+    columns:
+      - name: CATEGORYID
+        tests:
+          - unique
+          - not_null
+      - name: CATEGORYNAME
+      - name: DESCRIPTION
+
+  - name: base_dunder_mifflin__customers
+    description: "This table contains customer information."
+    columns:
+      - name: CUSTOMERID
+        tests:
+          - unique
+          - not_null
+      - name: COMPANYCODE
+      - name: COMPANYNAME
+      - name: CONTACTNAME
+      - name: CONTACTTITLE
+      - name: ADDRESS
+      - name: CITY
+      - name: STATE
+      - name: POSTALCODE
+      - name: COUNTRY
+      - name: PHONE
+
+  - name: base_dunder_mifflin__employees
+    description: "This table contains employee information."
+    columns:
+      - name: EMPLOYEEID
+        tests:
+          - unique
+          - not_null
+      - name: LASTNAME
+      - name: FIRSTNAME
+      - name: MIDDLENAME
+      - name: TITLE
+      - name: TITLEOFCOURTESY
+      - name: BIRTHDATE
+      - name: HIREDATE
+      - name: TERMINATIONDATE
+      - name: ADDRESS
+      - name: CITY
+      - name: STATE
+      - name: POSTALCODE
+      - name: COUNTRY
+      - name: HOMEPHONE
+      - name: EXTENSION
+      - name: NOTES
+
+  - name: base_dunder_mifflin__order_details
+    description: "This table contains order detail information."
+    columns:
+      - name: ORDERID
+        tests:
+          - not_null
+      - name: PRODUCTID
+        tests:
+          - not_null
+      - name: UNITPRICE
+      - name: QUANTITY
+      - name: DISCOUNT
+
+  - name: base_dunder_mifflin__orders
+    description: "This table contains order information."
+    columns:
+      - name: ORDERID
+        tests:
+          - unique
+          - not_null
+      - name: CUSTOMERID
+      - name: EMPLOYEEID
+      - name: ORDERDATE
+      - name: REQUIREDDATE
+      - name: SHIPPEDDATE
+      - name: SHIPVIA
+      - name: FREIGHT
+      - name: SHIPNAME
+      - name: SHIPADDRESS
+      - name: SHIPCITY
+      - name: SHIPREGION
+      - name: SHIPPOSTALCODE
+      - name: SHIPCOUNTRY
+
+  - name: base_dunder_mifflin__products
+    description: "This table contains product information."
+    columns:
+      - name: PRODUCTID
+        tests:
+          - unique
+          - not_null
+      - name: PRODUCTNAME
+      - name: PRODUCTDESCRIPTION
+      - name: SUPPLIERID
+      - name: CATEGORYID
+      - name: QUANTITYPERUNIT
+      - name: UNITPRICE
+      - name: UNITSINSTOCK
+      - name: UNITSONORDER
+      - name: REORDERLEVEL
+      - name: DISCONTINUED
+
+  - name: base_dunder_mifflin__shippers
+    description: "This table contains shipper information."
+    columns:
+      - name: SHIPPERID
+        tests:
+          - unique
+          - not_null
+      - name: COMPANYNAME
+      - name: PHONE
